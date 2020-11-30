@@ -8,10 +8,11 @@
     steam
     neovim
     emacs
-    mpd
     mpv
+    musikcube
     ncmpcpp
     firefox
+    ncpamixer
     virtmanager
     scream-receivers
     barrier
@@ -26,15 +27,24 @@
     neofetch
     transmission
     picom
-    discord
     unzip
     unrar
     curl
     arandr
     zathura
     ranger
-    i3lock
+    i3lock-fancy
     xorg.xrandr
+    p7zip
+    xorg.xev
+    xorg.xprop
+    ueberzug
+    scrot
+    gimp
+    cava
+    sxiv
+    autocutsel
+    tremc
   ];
 
 fonts.fonts = with pkgs; [
