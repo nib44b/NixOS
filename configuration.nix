@@ -2,7 +2,7 @@
 
 let
 
-  conf = "vbox";
+  conf = "1080ti";
 
 in {
 
