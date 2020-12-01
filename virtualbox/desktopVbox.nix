@@ -73,7 +73,6 @@
   # configuration of transmission
   services.transmission = {
     enable = true;
-    user = "cirno";
     settings = {
       download-dir = "/home/cirno/4TBVOL/";
       incomplete-dir = "/home/cirno/4TBVOL/torrents/.incomplete/";

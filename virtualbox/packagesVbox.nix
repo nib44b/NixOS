@@ -9,7 +9,6 @@
     neovim
     emacs
     mpv
-    musikcube
     ncmpcpp
     firefox
     ncpamixer
@@ -44,7 +43,6 @@
     cava
     sxiv
     autocutsel
-    tremc
   ];
 
 fonts.fonts = with pkgs; [

@@ -21,10 +21,10 @@ in {
       ./laptop/desktopLaptop.nix        
     ] else if conf == "vbox" then [
       ./hardware-configuration.nix
-      ./laptop/configurationLaptop.nix
-      ./laptop/systemLaptop.nix
-      ./laptop/packagesLaptop.nix
-      ./laptop/desktopLaptop.nix        
+      ./virtualbox/configurationVbox.nix
+      ./virtualbox/systemVbox.nix
+      ./virtualbox/packagesVbox.nix
+      ./virtualbox/desktopVbox.nix        
     ] else [
       ./hardware-configuration.nix
       ./webserver/configurationWeb.nix
