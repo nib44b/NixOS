@@ -1,4 +1,4 @@
-{ config, ...}: {
+{ config, pkgs, ...}: {
 
 services.nginx = {
   enable = true;
@@ -15,7 +15,7 @@ services.nginx = {
 
 services.mysql = {
   enable = true;
-  package = pkgs.mariadb;
+  package = pkgs.mysql;
 };
 
 services.phpfpm.pools.mypool = {                                                                                                                                                                                                             
@@ -30,3 +30,7 @@ services.phpfpm.pools.mypool = {
     "pm.max_requests" = 500;                                                                                                                                                                                                                 
   };                                                                                                                                                                                                                                         
 };
+
+security.acme.email = "tuukka.tapani.r@gmail.com";
+security.acme.acceptTerms = true;
+}

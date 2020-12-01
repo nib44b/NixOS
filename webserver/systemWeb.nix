@@ -12,8 +12,8 @@
 
   networking = {
     hostName = "gensokyo";
-    networking.useDHCP = false;
-    networking.interfaces.enp5s0.useDHCP = true;
+    useDHCP = false;
+    interfaces.ens3.useDHCP = true;
   };
 
   i18n.defaultLocale = "en_GB.UTF-8";
