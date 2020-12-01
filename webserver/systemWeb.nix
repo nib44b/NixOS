@@ -3,15 +3,18 @@
 {
   boot = {
     loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
+      grub.enable =true;
+      grub.version = 2;
+      grub.device = "/dev/vda";
     };
 
  };
 
-  networking.hostName = "gensokyo"; 
-  networking.useDHCP = false;
-  networking.interfaces.enp5s0.useDHCP = true;
+  networking = {
+    hostName = "gensokyo";
+    networking.useDHCP = false;
+    networking.interfaces.enp5s0.useDHCP = true;
+  };
 
   i18n.defaultLocale = "en_GB.UTF-8";
   console = {
