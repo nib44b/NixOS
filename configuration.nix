@@ -2,7 +2,7 @@
 
 let
 
-  conf = "1080ti";
+  conf = "vbox";
 
 in {
 
@@ -14,6 +14,12 @@ in {
       ./workstation/packagesWorkstation.nix
       ./workstation/desktopWorkstation.nix
     ] else if conf == "laptop" then [
+      ./hardware-configuration.nix
+      ./laptop/configurationLaptop.nix
+      ./laptop/systemLaptop.nix
+      ./laptop/packagesLaptop.nix
+      ./laptop/desktopLaptop.nix        
+    ] else if conf == "vbox" then [
       ./hardware-configuration.nix
       ./laptop/configurationLaptop.nix
       ./laptop/systemLaptop.nix
