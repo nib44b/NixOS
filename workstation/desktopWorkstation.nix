@@ -3,7 +3,7 @@
 {
   services = {
     picom.enable = true;
-    picom.shadow = true;
+    picom.shadow = false;
   };
 
   programs.xss-lock = {
@@ -41,7 +41,6 @@
 	        !URxvt.font:xft:Terminus (TTF):size=10
           URxvt.letterSpace: 0
           URxvt.lineSpace: 0
-          URxvt.geometry: 92x24
           URxvt.internalBorder: 7
           URxvt.cursorBlink: true
           URxvt.cursorUnderline: false

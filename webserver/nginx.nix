@@ -7,32 +7,40 @@
     certs.allowKeysForGroup = true;
     certs.group = "acme";
     acceptTerms = true;
-    email = "tuukka.t.korhonen@protonmail.com";
+    let
+      maili = { email = "tuukka.t.korhonen@protonmail.com"; };
+    in
+    certs = {
+      "cirno.world" = (maili // {
+        webroot = "/var/www/cirno/";
+      });
+      "rodent.example.com" = (maili // {
+        webroot = "/var/www/nazrin/";
+      });
+    };
   };
 
   services.nginx = {
     enable = true;
-    virtualHosts = {
+    let
+      commonConfig =
+        {
+          forceSSL = true;
+          enableACME = true;
+          locations."~ \.php$".extraConfig = ''
+            fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
+            fastcgi_index index.php;
+          '';
+        };
+    in
+    virtualHosts = commonConfig // {
       "cirno.world" = {
-        enableACME = true;
-        forceSSL = true;
         root = "/var/www/cirno";
         serverAliases = [ "www.cirno.world" ];
-        locations."~ \.php$".extraConfig = ''
-          fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
-          fastcgi_index index.php;
-        '';
       };
-      security.acme.certs."cirno.world".extraDomainNames = [ "rodent.cirno.world" ];
-      "rodent.cirno.world" = {
-        forceSSL = true;
-        useACMEHost = "cirno.world";
+      "rodent.cirno.world" = commonConfig // {
         root = "/var/www/nazrin";
         serverAliases = [ "wwww.rodent.cirno.world" ];
-        locations."~ \.php$".extraConfig = ''
-          fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
-          fastcgi_index index.php;
-        '';
       };
     };
   };
