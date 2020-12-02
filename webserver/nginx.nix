@@ -9,8 +9,7 @@
         fastcgi_index index.php;
       '';
       };
-  in
-  {
+  in{
 
   networking.firewall.allowedTCPPorts = [ 80 443 ];
   users.groups = { acme = { }; };
@@ -31,15 +30,15 @@
 
   services.nginx = {
     enable = true;
-    virtualHosts = commonConfig // {
-      "cirno.world" = {
+    virtualHosts = {
+      "cirno.world" = (commonConfig // {
         root = "/var/www/cirno";
         serverAliases = [ "www.cirno.world" ];
-      };
-      "rodent.cirno.world" = commonConfig // {
+      });
+      "rodent.cirno.world" = (commonConfig // {
         root = "/var/www/nazrin";
         serverAliases = [ "wwww.rodent.cirno.world" ];
-      };
+      });
     };
   };
 
@@ -60,4 +59,3 @@
       "pm.max_requests" = 500;
     };
   };
-  }
