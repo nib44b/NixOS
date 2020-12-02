@@ -17,6 +17,6 @@ webserver:
 Simple configuration with mariadb, php and nginx. Despite the simplicity its currently broken and I can't be assed to fix it.
 
 todo:
--fix webserver config
--possibly change to nixos flakes instead of variables to determine configs. (unecessary but nice to have)
--fix webserver!!!!
+fix webserver config
+possibly change to nixos flakes instead of variables to determine configs. (unecessary but nice to have)
+fix webserver!!!!

@@ -5,7 +5,7 @@
   environment.systemPackages = with pkgs; [
     wget
     neovim
-    emacs
+    vscode
     mpv
     musikcube
     ncmpcpp
@@ -45,13 +45,14 @@
     tremc
   ];
 
-fonts.fonts = with pkgs; [
-	noto-fonts
-	noto-fonts-cjk
-	noto-fonts-emoji                                                                                              
-	terminus_font_ttf                                                                                             
-	terminus_font                                                                                                 
-	font-awesome-ttf                                                                                              
-	fira-code                                                                                                     
-	uw-ttyp0
-];}
+  fonts.fonts = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    terminus_font_ttf
+    terminus_font
+    font-awesome-ttf
+    fira-code
+    uw-ttyp0
+  ];
+}

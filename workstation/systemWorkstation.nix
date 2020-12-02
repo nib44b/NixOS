@@ -32,11 +32,11 @@
 
   time.timeZone = "Europe/Helsinki";
 
-hardware = {
-   opengl.driSupport32Bit = true;
-   pulseaudio.enable = true;
-   opengl.extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
-   pulseaudio.support32Bit = true;
-};
+  hardware = {
+    opengl.driSupport32Bit = true;
+    pulseaudio.enable = true;
+    opengl.extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
+    pulseaudio.support32Bit = true;
+  };
 
 }

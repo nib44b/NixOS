@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
@@ -14,22 +15,26 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/f69b0607-5987-41f9-ae52-75ca961d2417";
+    {
+      device = "/dev/disk/by-uuid/f69b0607-5987-41f9-ae52-75ca961d2417";
       fsType = "xfs";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/28C4-CBCD";
+    {
+      device = "/dev/disk/by-uuid/28C4-CBCD";
       fsType = "vfat";
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/b233be50-2169-42f3-a6cd-e61bf936efca";
+    {
+      device = "/dev/disk/by-uuid/b233be50-2169-42f3-a6cd-e61bf936efca";
       fsType = "xfs";
     };
 
   fileSystems."/home/cirno/4TBVOL" =
-    { device = "/dev/disk/by-uuid/e3dc384f-aef6-4d9a-8161-0529e447b965";
+    {
+      device = "/dev/disk/by-uuid/e3dc384f-aef6-4d9a-8161-0529e447b965";
       fsType = "ext4";
     };
 

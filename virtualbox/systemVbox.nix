@@ -19,15 +19,15 @@
 
   time.timeZone = "Europe/Helsinki";
 
-virtualisation = {
-   virtualbox.guest.enable = true;
-   };
+  virtualisation = {
+    virtualbox.guest.enable = true;
+  };
 
-hardware = {
-   opengl.driSupport32Bit = true;
-   pulseaudio.enable = true;
-   opengl.extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
-   pulseaudio.support32Bit = true;
-};
+  hardware = {
+    opengl.driSupport32Bit = true;
+    pulseaudio.enable = true;
+    opengl.extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
+    pulseaudio.support32Bit = true;
+  };
 
 }

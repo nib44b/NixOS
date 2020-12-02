@@ -3,12 +3,12 @@
 {
   boot = {
     loader = {
-      grub.enable =true;
+      grub.enable = true;
       grub.version = 2;
       grub.device = "/dev/vda";
     };
 
- };
+  };
 
   networking = {
     hostName = "gensokyo";
@@ -24,4 +24,3 @@
 
   time.timeZone = "Europe/Neatherlands";
 }
-
