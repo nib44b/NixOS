@@ -13,7 +13,7 @@
 
   services.xserver = {
     enable = true;
-    videoDrivers = [ "nvidia" ];
+    videoDrivers = [ "amdgpu" ];
     layout = "fi";
     xkbOptions = "eurosign:e";
     dpi = 162;
