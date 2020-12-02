@@ -15,7 +15,6 @@
   users.groups = { acme = { }; };
 
   security.acme = {
-    certs.allowKeysForGroup = true;
     certs.group = "acme";
     acceptTerms = true;
     certs = {
