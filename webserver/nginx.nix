@@ -1,6 +1,7 @@
 { config, pkgs, ...}:
   let
     maili = { email = "tuukka.t.korhonen@protonmail.com"; };
+    
     commonConfig = {
       forceSSL = true;
       enableACME = true;
@@ -9,13 +10,12 @@
         fastcgi_index index.php;
       '';
       };
-  in{
+  in
+  {
 
   networking.firewall.allowedTCPPorts = [ 80 443 ];
-  users.groups = { acme = { }; };
 
   security.acme = {
-    certs.group = "acme";
     acceptTerms = true;
     certs = {
       "cirno.world" = (maili // {
@@ -58,3 +58,4 @@
       "pm.max_requests" = 500;
     };
   };
+  }
