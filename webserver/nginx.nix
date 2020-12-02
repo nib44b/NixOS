@@ -3,13 +3,13 @@
   networking.firewall.allowedTCPPorts = [ 80 443 ];
 
   users.groups = { acme = { }; };
+  let
+    maili = { email = "tuukka.t.korhonen@protonmail.com"; };
+  in
   security.acme = {
     certs.allowKeysForGroup = true;
     certs.group = "acme";
     acceptTerms = true;
-    let
-      maili = { email = "tuukka.t.korhonen@protonmail.com"; };
-    in
     certs = {
       "cirno.world" = (maili // {
         webroot = "/var/www/cirno/";
