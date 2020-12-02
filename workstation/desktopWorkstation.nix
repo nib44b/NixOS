@@ -3,6 +3,7 @@
   services = {
     picom.enable = true;
     picom.shadow = false;
+    gnome3.gnome-keyring.enable = true;
   };
 
   programs.xss-lock = {
