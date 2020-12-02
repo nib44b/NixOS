@@ -1,11 +1,20 @@
-{ config, pkgs, ...}: {
+{ config, pkgs, ...}:
+  let
+    maili = { email = "tuukka.t.korhonen@protonmail.com"; };
+    commonConfig = {
+      forceSSL = true;
+      enableACME = true;
+      locations."~ \.php$".extraConfig = ''
+        fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
+        fastcgi_index index.php;
+      '';
+      };
+  in
+  {
 
   networking.firewall.allowedTCPPorts = [ 80 443 ];
   users.groups = { acme = { }; };
-  
-  let
-    maili = { email = "tuukka.t.korhonen@protonmail.com"; };
-  in
+
   security.acme = {
     certs.allowKeysForGroup = true;
     certs.group = "acme";
@@ -22,17 +31,6 @@
 
   services.nginx = {
     enable = true;
-    let
-      commonConfig =
-        {
-          forceSSL = true;
-          enableACME = true;
-          locations."~ \.php$".extraConfig = ''
-            fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
-            fastcgi_index index.php;
-          '';
-        };
-    in
     virtualHosts = commonConfig // {
       "cirno.world" = {
         root = "/var/www/cirno";
