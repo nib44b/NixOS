@@ -38,10 +38,6 @@
       fsType = "ext4";
     };
 
-
-
   swapDevices = [ ];
-
-  # high-resolution display
   hardware.video.hidpi.enable = lib.mkDefault true;
 }
