@@ -1,10 +1,5 @@
 { config, pkgs, ...}: 
 {
-  environment.systemPackages = with pkgs; [
-    php
-    mariadb
-  ];
-
   security.acme.acceptTerms = true;
   security.acme.email = "tuukka.t.korhonen@protonmail.com";
   networking.firewall.allowedTCPPorts = [80 443];
@@ -21,16 +16,12 @@
       '';
     };
   };
-  services.mysql = {
-    enable = true;
-    package = pkgs.mariadb;
-  };
-  
+
   services.phpfpm.pools.cirno = {
     user = "nginx";
     settings = {
       pm = "dynamic";
-      "listen.owner" = config.services.nginx.user;
+      "listen.owner" = "nginx";
       "pm.max_children" = 5;
       "pm.start_servers" = 2;
       "pm.min_spare_servers" = 1;
