@@ -11,7 +11,7 @@
       forceSSL = true;
       root = "/var/www/cirno";
       locations."~ \.php$".extraConfig = ''
-        fastcgi_pass  unix:${config.services.phpfpm.pools.cirno.socket};
+        fastcgi_pass  unix:/run/phpfpm/cirno.socket;
         fastcgi_index index.php;
       '';
     };
