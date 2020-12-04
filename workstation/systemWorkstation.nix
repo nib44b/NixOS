@@ -10,7 +10,7 @@
     kernelModules = [ "vfio_virqfd" "vfio_pci" "vfio_iommu_type1" "vfio" ];
     kernelParams = [ "amd_iommu=on" ];
     #extraModprobeConfig = " options vfio-pci ids=10de:2184,10de:1aeb,10de:1aec,10:aed";
-    ##blacklistedKernelModules = [ "nvidia" "nouveau" ];
+    blacklistedKernelModules = [ "nvidia" "nouveau" ];
   };
 
   virtualisation = {

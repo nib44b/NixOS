@@ -25,7 +25,7 @@
 
   services.xserver = {
     enable = true;
-    videoDrivers = [ "nvidia" ];
+    videoDrivers = [ "amdgpu" ];
     layout = "fi,rs,ru";
     xkbOptions = "eurosign:e,grp:alt_space_toggle";
     dpi = 162;
