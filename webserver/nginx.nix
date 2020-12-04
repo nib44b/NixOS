@@ -4,7 +4,7 @@
     php
     mariadb
   ];
-  
+
   security.acme.acceptTerms = true;
   security.acme.email = "tuukka.t.korhonen@protonmail.com";
   networking.firewall.allowedTCPPorts = [80 443];
@@ -16,7 +16,7 @@
       forceSSL = true;
       root = "/var/www/cirno";
       locations."~ \.php$".extraConfig = ''
-        fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
+        fastcgi_pass  unix:${config.services.phpfpm.pools.cirno.socket};
         fastcgi_index index.php;
       '';
     };
@@ -26,8 +26,8 @@
     package = pkgs.mariadb;
   };
   
-  services.phpfpm.pools.mypool = {
-    user = "nobody";
+  services.phpfpm.pools.cirno = {
+    user = "nginx";
     settings = {
       pm = "dynamic";
       "listen.owner" = config.services.nginx.user;
@@ -39,3 +39,4 @@
     };
   };
 }
+
