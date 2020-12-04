@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  conf = "web";
+  conf = "1080ti";
 in
 {
   imports =
