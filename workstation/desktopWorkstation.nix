@@ -4,6 +4,18 @@
     picom.enable = true;
     picom.shadow = false;
     gnome3.gnome-keyring.enable = true;
+    # configuration of transmission
+    transmission = {
+      enable = true;
+      settings = {
+        download-dir = "/home/cirno/4TBVOL/torrents/";
+        incomplete-dir = "/home/cirno/4TBVOL/torrents/.incomplete/";
+        incomplete-dir-enabled = true;
+        peer-port-random-high = 65535;
+        peer-port-random-low = 49152;
+        peer-port-random-on-start = true;
+      };
+    };
   };
 
   programs.xss-lock = {
@@ -14,8 +26,8 @@
   services.xserver = {
     enable = true;
     videoDrivers = [ "nvidia" ];
-    layout = "fi";
-    xkbOptions = "eurosign:e";
+    layout = "fi,rs,ru";
+    xkbOptions = "eurosign:e,grp:alt_space_toggle";
     dpi = 162;
 
     desktopManager = {
@@ -69,18 +81,4 @@
       '';
     };
   };
-
-  # configuration of transmission
-  services.transmission = {
-    enable = true;
-    settings = {
-      download-dir = "/home/cirno/4TBVOL/torrents/";
-      incomplete-dir = "/home/cirno/4TBVOL/torrents/.incomplete/";
-      incomplete-dir-enabled = true;
-      peer-port-random-high = 65535;
-      peer-port-random-low = 49152;
-      peer-port-random-on-start = true;
-    };
-  };
-
 }
