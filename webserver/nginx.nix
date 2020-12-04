@@ -13,7 +13,6 @@ in
 {
   security.acme.acceptTerms = true;
   security.acme.email = "tuukka.t.korhonen@protonmail.com";
-  security.acme.certs."cirno.world".extraDomainNames = [ "rodent.cirno.world" ];
   
   services.nginx = {
     enable = true;
