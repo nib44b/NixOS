@@ -13,7 +13,8 @@ in
 {
   security.acme.acceptTerms = true;
   security.acme.email = "tuukka.t.korhonen@protonmail.com";
-
+  security.acme.certs."cirno.world".extraDomainNames = [ "rodent.cirno.world" ];
+  
   services.nginx = {
     enable = true;
     virtualHosts = {
@@ -22,8 +23,7 @@ in
         locations."/" = {
           root = "/var/www/cirno";
         };
-      });
-      security.acme.certs."cirno.world".extraDomainNames = [ "rodent.cirno.world" ];
+      });    
       "rodent.cirno.world" = (commonOptions // {
         locations."/" = {
           root = "/var/www/nazrin";
