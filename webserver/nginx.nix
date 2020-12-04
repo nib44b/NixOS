@@ -30,5 +30,6 @@
       "pm.start_servers" = 10;
       "pm.min_spare_servers" = 5;
       "pm.max_spare_servers" = 20;
-      "pm.max_requests" = 500; }                                                                                                                                                                                                                                       
+      "pm.max_requests" = 500; };
   };
+}
