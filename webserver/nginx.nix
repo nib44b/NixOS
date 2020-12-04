@@ -23,7 +23,7 @@
   };
 
   services.phpfpm.pools.cirno = {                                                                                                                                                                                                             
-    user = "nginx";                                                                                                                                                                                                                           
+    user = "nobody";                                                                                                                                                                                                                           
     settings = { 
       "pm" = "dynamic";
       "pm.max_children" = 75;
