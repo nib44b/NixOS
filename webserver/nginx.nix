@@ -1,7 +1,7 @@
 { config, pkgs, ...}: 
 {
   security.acme.acceptTerms = true;
-  security.acme.email = "admin+acme@example.com";
+  security.acme.email = "tuukka.t.korhonen@protonmail.com";
   
   services.nginx = {
     enable = true;
