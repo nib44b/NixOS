@@ -1,5 +1,10 @@
 { config, pkgs, ...}: 
 {
+  environment.systemPackages = with pkgs; [
+    php
+    mariadb
+  ];
+  
   security.acme.acceptTerms = true;
   security.acme.email = "tuukka.t.korhonen@protonmail.com";
   networking.firewall.allowedTCPPorts = [80 443];
