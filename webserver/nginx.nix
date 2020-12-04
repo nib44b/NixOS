@@ -6,7 +6,6 @@
   
 services.nginx.enable = true;
 services.nginx.virtualHosts."cirno.world" = {
-    addSSL = true;
     forceSSL = true;
     enableACME = true;
     root = "/var/www/cirno";
