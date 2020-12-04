@@ -6,7 +6,7 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    kernelModules = [ "vfio_virqfd" "vfio_pci" "vfio_iommu_type1" "vfio" ];
+    kernelModules = [ "vfio_virqfd" "vfio_pci" "vfio_iommu_type1" "vfio" "kvm-amd" ];
     kernelParams = [ "amd_iommu=on" ];
     extraModprobeConfig = " options vfio-pci ids=10de:1b06,10de:10ef";
     blacklistedKernelModules = [ "nvidia" "nouveau" ];
