@@ -11,9 +11,9 @@
     ncmpcpp
     firefox
     ncpamixer
-    virtmanager
-    scream-receivers
-    barrier
+    #virtmanager
+    #scream-receivers
+    #barrier
     bspwm
     sxhkd
     dmenu
