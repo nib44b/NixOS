@@ -8,6 +8,7 @@
     vscode
     mpv
     musikcube
+    ghc
     ncmpcpp
     firefox
     ncpamixer
