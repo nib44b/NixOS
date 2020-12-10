@@ -9,6 +9,7 @@
     mpv
     musikcube
     ghc
+    pulseaudio-ctl
     ncmpcpp
     firefox
     ncpamixer
