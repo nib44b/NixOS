@@ -56,5 +56,6 @@
     font-awesome-ttf
     fira-code
     uw-ttyp0
+    siji
   ];
 }

@@ -59,24 +59,25 @@
           URxvt.saveline: 2048
           URxvt.scrollBar: false
           URxvt.scrollBar_right: false
-          *background: #fbf1c7
-          *foreground: #3c3836
-          *color0:  #fdf4c1
-          *color8:  #928374
-          *color1:  #cc241d
-          *color9:  #9d0006
-          *color2:  #98971a
-          *color10: #79740e
-          *color3:  #d79921
-          *color11: #b57614
-          *color4:  #458588
-          *color12: #076678
-          *color5:  #b16286
-          *color13: #8f3f71
-          *color6:  #689d6a
-          *color14: #427b58
-          *color7:  #7c6f64
-          *color15: #3c3836
+          *.foreground:   #787c99
+          *.background:   #16161e
+          *.cursorColor:  #787c99
+          *.color0:       #363b54
+          *.color8:       #363b54
+          *.color1:       #f7768e
+          *.color9:       #f7768e
+          *.color2:       #41a6b5
+          *.color10:      #41a6b5
+          *.color3:       #e0af68
+          *.color11:      #e0af68
+          *.color4:       #7aa2f7
+          *.color12:      #7aa2f7
+          *.color5:       #bb9af7
+          *.color13:      #bb9af7
+          *.color6:       #7dcfff
+          *.color14:      #7dcfff
+          *.color7:       #787c99
+          *.color15:      #acb0d0
         ''}
       '';
     };
