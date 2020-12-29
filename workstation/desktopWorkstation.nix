@@ -7,6 +7,7 @@
     # configuration of transmission
     transmission = {
       enable = true;
+      user = "cirno";
       settings = {
         download-dir = "/home/cirno/4TBVOL/torrents/";
         incomplete-dir = "/home/cirno/4TBVOL/torrents/.incomplete/";
@@ -36,9 +37,18 @@
     };
 
     windowManager.bspwm.enable = true;
-
+    
     displayManager = {
-      lightdm.enable = true;
+      lightdm.greeters.mini = {
+        enable = true;
+        user = "cirno";
+        extraConfig = ''
+          [greeter]
+          show-password-label = false
+          [greeter-theme]
+          background-image = "/home/cirno/Pictures/space.jpg"
+          '';
+      };
       sessionCommands = ''
         ${pkgs.xorg.xrdb}/bin/xrdb -merge <${pkgs.writeText "Xresources" ''
           Xft.dpi: 162
@@ -75,9 +85,9 @@
           *.color5:       #bb9af7
           *.color13:      #bb9af7
           *.color6:       #7dcfff
-          *.color14:      #7dcfff
+          *.color15:      #7dcfff
           *.color7:       #787c99
-          *.color15:      #acb0d0
+          *.color14:      #acb0d0
         ''}
       '';
     };
