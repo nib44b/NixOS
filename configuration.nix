@@ -7,10 +7,12 @@ in
   imports =
     if conf == "1080ti" then [
       ./hardware-configuration.nix
-      ./workstation/configurationWorkstation.nix
-      ./workstation/systemWorkstation.nix
-      ./workstation/packagesWorkstation.nix
-      ./workstation/desktopWorkstation.nix
+      ./workstation/configuration.nix
+      ./workstation/system.nix
+      ./workstation/packages.nix
+      ./workstation/xorg.nix
+      ./workstation/services.nix
+      ./workstation/pulse.nix
     ] else if conf == "laptop" then [
       ./hardware-configuration.nix
       ./laptop/configurationLaptop.nix

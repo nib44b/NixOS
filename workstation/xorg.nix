@@ -1,24 +1,5 @@
 { config, lib, pkgs, ... }:
 {
-  services = {
-    picom.enable = true;
-    picom.shadow = false;
-    gnome3.gnome-keyring.enable = true;
-    # configuration of transmission
-    transmission = {
-      enable = true;
-      user = "cirno";
-      settings = {
-        download-dir = "/home/cirno/4TBVOL/torrents/";
-        incomplete-dir = "/home/cirno/4TBVOL/torrents/.incomplete/";
-        incomplete-dir-enabled = true;
-        peer-port-random-high = 65535;
-        peer-port-random-low = 49152;
-        peer-port-random-on-start = true;
-      };
-    };
-  };
-
   programs.xss-lock = {
     enable = true;
     lockerCommand = "${pkgs.i3lock-fancy}/bin/i3lock-fancy";
@@ -49,6 +30,7 @@
           background-image = "/home/cirno/Pictures/space.jpg"
           '';
       };
+      #handle Xresources with nix
       sessionCommands = ''
         ${pkgs.xorg.xrdb}/bin/xrdb -merge <${pkgs.writeText "Xresources" ''
           Xft.dpi: 162
@@ -91,5 +73,11 @@
         ''}
       '';
     };
+    #cool kids don't need mouse acceleration
+    libinput = {
+      enable = true;
+      accelProfile = "flat";
+      accelSpeed = "0";
+  };
   };
 }

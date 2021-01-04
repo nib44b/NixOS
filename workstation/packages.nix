@@ -1,7 +1,9 @@
 { pkgs, ... }:
 
 {
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config = {allowUnfree = true; };
+  };
   environment.systemPackages = with pkgs; [
     wget
     neovim
@@ -10,7 +12,6 @@
     musikcube
     ghc
     pulseaudio-ctl
-    ncmpcpp
     firefox
     ncpamixer
     #virtmanager
